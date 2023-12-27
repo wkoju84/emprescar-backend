@@ -10,12 +10,12 @@ import java.util.List;
 
 public class UserLogged implements UserDetails {
 
-    private br.com.dh.emprescar.model.User user;
+    private br.com.emprescar.model.User user;
 
     private User springUserDetails;
 
 
-    public UserLogged(br.com.dh.emprescar.model.User user) {
+    public UserLogged(br.com.emprescar.model.User user) {
         this.user = user;
         SimpleGrantedAuthority name = new SimpleGrantedAuthority("name:"+user.getCustomer().getName());
         SimpleGrantedAuthority lastName = new SimpleGrantedAuthority("lastName:"+user.getCustomer().getLastName());

@@ -1,7 +1,6 @@
 package br.com.emprescar.model;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity

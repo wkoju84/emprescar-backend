@@ -1,7 +1,7 @@
 package br.com.emprescar.security.user;
 
-import br.com.dh.emprescar.model.User;
-import br.com.dh.emprescar.repository.UserRepository;
+import br.com.emprescar.model.User;
+import br.com.emprescar.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
