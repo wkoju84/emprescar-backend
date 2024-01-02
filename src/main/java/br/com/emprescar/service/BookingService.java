@@ -30,20 +30,20 @@ public class BookingService {
     @Transactional(readOnly = true)
     public List<BookingDto> searchAll() {
         List<Booking> list = bookingRepository.findAll();
-        return list.stream().map(BookingDto::new).collect(Collectors.toList());
+        return list.stream().map(x -> new BookingDto(x)).collect(Collectors.toList());
     }
 
 
     @Transactional(readOnly = true)
     public List<BookingDto> searchAllByProductId(Integer productId) {
         List<Booking> list = bookingRepository.findAllByProductId(productId);
-        return list.stream().map(BookingDto::new).collect(Collectors.toList());
+        return list.stream().map(x -> new BookingDto(x)).collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
     public List<BookingDto> searchAllByCustomerId(Integer customerId) {
         List<Booking> list = bookingRepository.findAllByCustomerId(customerId);
-        return list.stream().map(BookingDto::new).collect(Collectors.toList());
+        return list.stream().map(x -> new BookingDto(x)).collect(Collectors.toList());
     }
 
     @Transactional()

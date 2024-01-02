@@ -36,19 +36,19 @@ public class ProductService {
     @Transactional(readOnly = true)
     public List<ProductDto> searchAll() {
         List<Product> list = productRepository.findAll();
-        return list.stream().map(ProductDto::new).collect(Collectors.toList());
+        return list.stream().map(x -> new ProductDto(x)).collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
     public List<ProductDto> searchAllByCategoryId(Integer categoryId) {
         List<Product> list = productRepository.findAllByCategoryId(categoryId);
-        return list.stream().map(ProductDto::new).collect(Collectors.toList());
+        return list.stream().map(x -> new ProductDto(x)).collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
     public List<ProductDto> searchAllByCityId(Integer cityId) {
         List<Product> list = productRepository.findAllByCityId(cityId);
-        return list.stream().map(ProductDto::new).collect(Collectors.toList());
+        return list.stream().map(x -> new ProductDto(x)).collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
@@ -128,11 +128,11 @@ public class ProductService {
 
     public List<ProductDto> searchAllByDateRange(Date pickupDate, Date dropoffDate) {
         List<Product> list = productRepository.findAllByDateRange(pickupDate, dropoffDate);
-        return list.stream().map(ProductDto::new).collect(Collectors.toList());
+        return list.stream().map(x -> new ProductDto(x)).collect(Collectors.toList());
     }
 
     public List<ProductDto> searchAllByCityIdAndDateRange(Integer cityId, Date pickupDate, Date dropoffDate) {
         List<Product> list = productRepository.findAllByCityIdAndDateRange(cityId, pickupDate, dropoffDate);
-        return list.stream().map(ProductDto::new).collect(Collectors.toList());
+        return list.stream().map(x -> new ProductDto(x)).collect(Collectors.toList());
     }
 }

@@ -19,7 +19,7 @@ public class FeatureService {
     @Transactional(readOnly = true)
     public List<FeatureDto> searchAll() {
         List<Feature> list = featureRepository.findAll();
-        return list.stream().map(FeatureDto::new).collect(Collectors.toList());
+        return list.stream().map(x -> new FeatureDto(x)).collect(Collectors.toList());
     }
 
 }

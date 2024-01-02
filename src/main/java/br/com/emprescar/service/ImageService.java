@@ -19,7 +19,7 @@ public class ImageService {
     @Transactional(readOnly = true)
     public List<ImageDto> searchAll() {
         List<Image> list = imageRepository.findAll();
-        return list.stream().map(ImageDto::new).collect(Collectors.toList());
+        return list.stream().map(x -> new ImageDto(x)).collect(Collectors.toList());
     }
 
     @Transactional

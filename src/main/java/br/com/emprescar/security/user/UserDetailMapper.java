@@ -9,7 +9,6 @@ public class UserDetailMapper implements UserDetailsMapper {
 
     @Override
     public UserDetails map(Object shouldBeASystemUser) {
-        return new UserLogged((User)
-                shouldBeASystemUser);
+        return new UserLogged((User) shouldBeASystemUser);
     }
 }
